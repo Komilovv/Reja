@@ -14,12 +14,13 @@ app.set("view engine", "ejs");
 app.set("views", "views");
 
 // 4 Routing code
-app.get("/hello", (req, res) => {
-    res.end("Hello World by Otabek");
+app.post("/create-item", (req, res) => {
+    console.log(req.body);
+    res.json({test: "ok"});
 });
 
-app.get("/gift", (req, res) => {
-    res.end("Gifts for you by Otabek");
+app.get("/", (req, res) => {
+    res.render("harid");
 });
 
 const server = http.createServer(app);  
