@@ -2,6 +2,16 @@ console.log("Web serverni boshlash.");
 const express = require("express");
 const app = express();
 const http = require("http");
+const fs = require("fs");
+
+let user;
+fs.readFile("database/user.json", "utf-8", (err, data) => {
+    if (err) {
+        console.log(err);
+    } else {
+        user = JSON.parse(data);
+    }
+});
 
 // 1 Kirish codelari
 app.use(express.static("public"));
@@ -17,6 +27,10 @@ app.set("views", "views");
 app.post("/create-item", (req, res) => {
     console.log(req.body);
     res.json({test: "ok"});
+});
+
+app.get("/author", (req, res) => {
+    res.render("author", {user: user});
 });
 
 app.get("/", (req, res) => {
