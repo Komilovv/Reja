@@ -1,1 +1,209 @@
-<div>Hello aka</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/main.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <title>Portfolio</title>
+</head>
+<body>
+    <div class="frame">
+      <div class="main_frame">  
+        <div class="left_frame">
+            <div class="left_1">
+                <div class="left_1_1">
+                 <img src="images/profile.png" alt="" class="user_image">
+                </div>
+                <div class="left_1_2">
+                 <%=user.name%>
+                </div>
+                <div class="left_1_3">
+                 <%=user.profession%>
+                </div>
+                <div class="left_icons">
+                  <a class="link_href" href="">
+                    <div class="icon">
+                        <img src="icon/Instagram.svg" alt="" class="icon-1">
+                    </div>
+                    </a>
+                    <a class="link_href" href="">
+                        <div class="icon">
+                            <img src="icon/Facebook.svg" alt="" class="icon-1">
+                        </div>
+                    </a>
+                    <a class="link_href" href="">
+                        <div class="icon">
+                            <img src="icon/Twitter.svg" alt="" class="icon-1">
+                        </div>
+                    </a>
+                    <a class="link_href" href="">
+                        <div class="icon">
+                            <img src="icon/Linkeding.svg" alt="" class="icon-1">
+                        </div>
+                    </a>
+                    <a class="link_href" href="">
+                        <div class="icon">
+                            <img src="icon/Youtube.svg" alt="" class="icon-1">
+                        </div>
+                    </a>
+                    <a class="link_href" href="">
+                        <div class="icon">
+                            <img src="icon/Dribbble.svg" alt="" class="icon-1">
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="marginer"></div>
+            <div class="left_2">
+                <div class="row">
+                    <span class="label">Age:</span>
+                    <span class="value"><%=user.age%></span>
+                </div>
+                <div class="row">
+                    <span class="label">Residence:</span>
+                    <span class="value"><%=user.residence%></span>
+                </div>
+                <div class="row">
+                    <span class="label">Freelance:</span>
+                    <span class="value available">Available</span>
+                </div>
+                <div class="row">
+                    <span class="label">Address:</span>
+                    <span class="value"><%=user.address%></span>
+                </div>
+            </div>
+            <div class="marginer"></div>
+            <div class="left_3">
+                <div class="language"><strong>Languages</strong></div>
+                <div class="row">
+                    <div class="label"><%=user.languages[0]%></div>
+                    <div class="value">100%</div>
+                </div>
+                <div class="icon_line">
+                    <img src="icon/Line.svg" alt=""> 
+                </div>
+                <div class="row">
+                    <div class="label"><%=user.languages[2]%></div>
+                    <div class="value">90%</div>
+                </div>
+                <div class="icon_line">
+                    <img src="icon/Line8.svg">
+                </div>
+                <div class="row">
+                    <div class="label"><%=user.languages[1]%></div>
+                    <div class="value">80%</div>
+                </div>
+                <div class="icon_line">
+                    <img src="icon/Line6.svg">
+                </div>
+            </div>
+            <div class="marginer"></div>
+            <div class="left_4">
+                <div class="skill"><strong>Skills</strong></div>
+                <div class="row">
+                    <div><%=user.skills[0]%></div>
+                    <div>90%</div>
+                </div>
+                <div class="skill_icon">
+                    <img src="icon/skill90.svg">
+                </div>
+                <div class="row">
+                    <div><%=user.skills[1]%></div>
+                    <div>85%</div>
+                </div>
+                <div class="skill_icon">
+                    <img src="icon/skill85.svg">
+                </div>
+                <div class="row">
+                    <div><%=user.skills[2]%></div>
+                    <div>80%</div>
+                </div>
+                <div class="skill_icon">
+                    <img src="icon/skill80.svg">
+                </div>
+                <div class="row">
+                    <div><%=user.skills[3]%></div>
+                    <div>90%</div>
+                </div>
+                <div class="skill_icon">
+                    <img src="icon/skill90.svg">
+                </div>
+                <div class="row">
+                    <div><%=user.skills[4]%></div>
+                    <div>85%</div>
+                </div>
+                <div class="skill_icon">
+                    <img src="icon/skill85.svg">
+                </div>
+            </div>
+            <div class="marginer"></div>
+            <div class="left_5">
+                <div class="e_skill"><strong>Extra Skills</strong></div>
+                <div>
+                    <div class="row">
+                    <div class="sqr_icon">
+                        <img src="icon/sqr_icon.svg">
+                    </div>
+                    <div class="skill_item"><%=user.extra_skills[0]%>, Materialize</div>
+                </div>
+                <div class="row">
+                    <div class="sqr_icon">
+                        <img src="icon/sqr_icon.svg">
+                    </div>
+                    <div class="skill_item"><%=user.extra_skills[2]%></div>
+                </div>
+                <div class="row">
+                    <div class="sqr_icon">
+                        <img src="icon/sqr_icon.svg">
+                    </div>
+                    <div class="skill_item"><%=user.extra_skills[3]%></div>
+                </div>
+                <div class="row">
+                    <div class="sqr_icon">
+                        <img src="icon/sqr_icon.svg">
+                    </div>
+                    <div class="skill_item"><%=user.extra_skills[4]%></div>
+                </div>
+                </div>
+            </div>
+            <div class="marginer"></div>
+        </div>
+        <div class="midd_frame">
+            <div class="midd_frame1">
+                <div class="midd_frame1h">
+                    <img src="images/ellipse.svg" class="ellipse1">
+                    <img src="images/ellipse.svg" class="ellipse2">
+                    <div class="title">
+                        <strong>Doctor neurologist in OHSU Hospital</strong>
+                    </div>
+                    <div class="description">
+                        Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit. 
+                        Et, volutpat feugiat placerat lobortis. 
+                        Natoque rutrum semper sed suspendisse nunc lectus.
+                    </div>
+                    <img src="images/rectangle.svg" class="rectangle1">
+                    <div class="button">
+                        <button class="button_in">HIRE ME</button>
+                    </div>
+                    <div class="decoration">
+                        <img src="images/ellipse.svg" class="ellipse1">
+                    </div>
+                </div>
+                <div class="big_img">
+                    <img src="images/polygon.svg" class="polygon">
+                    <img src="images/bratan.png">
+                </div>
+            </div>
+            <div class="midd_frame2">
+                
+            </div>
+        </div>
+        <div class="right_frame"></div>
+      </div>
+    </div> 
+</body>
+</html>
