@@ -39,15 +39,6 @@
   flex-direction: column;
 }
 
-.main_frame .right_frame {
-  position: relative;
-  width: 108px;
-  height: 1315px;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 /* ============================================================== */
 .main_frame .left_1 {
     position: relative;
@@ -462,3 +453,158 @@
   margin-right: -5px;
 
 }
+
+/* ==================== Midd Frame 2 ================== */
+
+.midd_frame2 {
+  width: 970px;
+  height: 653px;
+  display: flex;
+  flex-direction: column;
+  /* background-color: chartreuse; */
+  margin-top: 148.67px;
+}
+
+.midd_frame2 .service1 {
+
+}
+
+.midd_frame2 .my_service {
+  color: var(--Black, #2B2B2B);
+  /* H2 - 32px */
+  font-family: Inter;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 7
+  
+  00;
+  line-height: 123.6%; /* 39.552px */
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.midd_frame .service_desc {
+  width: 438px;
+  height: 68px;
+  color: var(--Paragraph-Font, #767676);
+  text-align: center;
+  font-kerning: none;
+  font-feature-settings: 'calt' off;
+
+  /* P-15px paragraph */
+  font-family: Inter;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 160% */
+  text-transform: capitalize;
+  margin-top: 25px;
+  margin-left: 30%;
+}
+
+.service2 {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 60px;
+  justify-content: space-evenly;
+  align-content: space-between;
+}
+
+.service2 .ser_box {
+  width: 310px;
+  height: 225px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.service2 .ser_icon {
+  display: flex;
+  width: 68px;
+  height: 68px;
+  justify-content: center;
+  align-items: center;
+}
+
+.service2 .ser_name {
+  color: var(--Black, #2B2B2B);
+
+  /* H4 - 18px */
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 123.6%; /* 22.248px */
+  text-transform: capitalize;
+}
+
+.ser_info {
+  color: var(--Paragraph-Font, #767676);
+  /* text-align: center; */
+  font-kerning: none;
+  font-feature-settings: 'calt' off;
+
+  /* Paragraph Progress - 15 */
+  font-family: Inter;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 160% */
+  text-transform: capitalize;
+}
+
+.order_now {
+  color: var(--Yellow, #FFB400);
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  display: flex;
+  flex-direction: row;
+}
+
+/* ==================== Right Frame =================== */
+
+.main_frame .right_frame {
+  position: relative;
+  width: 108px;
+  height: 1315px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.moon {
+  width: 30px;
+  height: 30px;
+  margin-top: 50px;
+  margin-bottom: 200px;
+}
+
+.right_icons {
+  width: 65px;
+  height: 493px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home_icon {
+  position: relative;
+  display:flex;
+  
+}
+
+.home1 {
+  width: 70px;
+  height: 70px;
+  display: block;
+}
+
+/* Alhamdulilah */
