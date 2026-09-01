@@ -64,16 +64,32 @@
 
 // ================================ A-Task ================================================
 
-function countLetter (x, word) {
-    count = 0;
-    for (letter of word) {
-        if (x == letter) {
+// function countLetter (x, word) {
+//     count = 0;
+//     for (letter of word) {
+//         if (x == letter) {
+//             count++;
+//         }
+//         else continue
+//     }
+//     return count;
+// }
+
+// const y = countLetter("t", "tarozida tuhmatlar toshdur.");
+// console.log(y)
+
+// ================================ B-Task ================================================
+
+function countDig (smth) {
+    let count = 0;
+    for (let x of smth) {
+        if (x >= "0" && x <= "9") {
             count++;
-        }
-        else continue
+        } else
+            continue
     }
     return count;
 }
 
-const y = countLetter("t", "tarozida tuhmatlar toshdur.");
-console.log(y)
+const z = countDig("dfs422sdf453dfs435dfssd543sad5hfg54");
+console.log(z)
