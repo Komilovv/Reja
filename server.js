@@ -1,49 +1,22 @@
-console.log("Web serverni boshlash.");
-const express = require("express");
-const app = express();
 const http = require("http");
-const fs = require("fs");
+const { MongoClient } = require("mongodb");
 
-let user;
-fs.readFile("database/user.json", "utf-8", (err, data) => {
-    if (err) {
-        console.log(err);
-    } else {
-        user = JSON.parse(data);
-    }
-});
+const connectionString = "mongodb://Otabek:s6FMWVBlO4Sft3iC@ac-f4keexs-shard-00-00.murbvev.mongodb.net:27017,ac-f4keexs-shard-00-01.murbvev.mongodb.net:27017,ac-f4keexs-shard-00-02.murbvev.mongodb.net:27017/?ssl=true&replicaSet=atlas-43dt5e-shard-0&authSource=admin&appName=Cluster0";
 
-// 1 Kirish codelari
-app.use(express.static("public"));
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+const client = new MongoClient(connectionString);
 
-// 2 Session code
-// 3 Views code
-app.set("view engine", "ejs");
-app.set("views", "views");
+client.connect()
+    .then(() => {
+        console.log("MongoDB connection succeeded.");
+        const db = client.db("Reja");
+        const app = require("./app")(db);
+        const server = http.createServer(app);
 
-// 4 Routing code
-app.post("/create-item", (req, res) => {
-    console.log(req.body);
-    res.json({test: "ok"});
-});
-
-app.get("/author", (req, res) => {
-    res.render("author", {user: user});
-});
-
-app.get("/", (req, res) => {
-    res.render("reja");
-});
-
-const server = http.createServer(app);  
-let PORT = 3000;
-server.listen(PORT, () => { 
-    console.log(`Server ${PORT} portda ishga tushdi, http://localhost:${PORT}`);
-});
-
-
-
-
-// Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+        const PORT = 3000;
+        server.listen(PORT, () => {
+            console.log(`Server ${PORT} portda ishga tushdi, http://localhost:${PORT}`);
+        });
+    })
+    .catch((err) => {
+        console.log("Error on connection MongoDB:", err);
+    });
