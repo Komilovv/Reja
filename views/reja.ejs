@@ -21,7 +21,7 @@
                     <input 
                     type="text" 
                     name="reja" 
-                    id="creatre-field" 
+                    id="create-field" 
                     class="form-control mr-3" 
                     style="flex: 1"
                     autofocus
@@ -46,10 +46,10 @@
                             data-id="<%= item._id %>"
                             class="edit-me btn btn-secondary btn-sm mr-1"
                         >
-                            Ozgartirish
+                            O'zgartirish
                         </button>
-                        <button data-id="<%= item._id %>" class="delete-me btn btn-danger btn-sm">Ochirish</button>
-                    </div>
+                        <button data-id="<%= item._id %>" class="delete-me btn btn-danger btn-sm">O'chirish</button>
+                    </div>  
                 </li>
             <% }) %>
         </ul>
@@ -60,6 +60,7 @@
             </button>
         </div>
     </div>
-    
+    <script src="https://unpkg.com/axios@1.13.2/dist/axios.min.js"></script>
+    <script src="/browser.js"></script>
 </body>
 </html>

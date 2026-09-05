@@ -1,5 +1,6 @@
 const express = require("express");
 const fs = require("fs");
+const mongodb = require("mongodb");
 
 module.exports = (db) => {
     console.log("Web serverni boshlash.");
@@ -19,7 +20,7 @@ module.exports = (db) => {
     app.use(express.static("public"));
     app.use(express.json());
     app.use(express.urlencoded({ extended: true }));
-
+ 
     // 2 Session code
     // 3 Views code
     app.set("view engine", "ejs");
@@ -30,12 +31,20 @@ module.exports = (db) => {
         try {
             console.log(req.body);
             const new_reja = req.body.reja;
-            await db.collection("plans").insertOne({ reja: new_reja });
-            res.end("successfully added");
+            // await db.collection("plans").insertOne({ reja: new_reja });
+            // res.end("successfully added");
+            const result = await db.collection("plans").insertOne({ reja: new_reja });
+            res.json({ _id: result.insertedId, reja: new_reja });
         } catch (err) {
             console.log(err);
             res.end("Something went wrong");
         }
+    });
+
+    app.post("/delete-item", async (req, res) => {
+        const id = req.body.id;
+        await db.collection("plans").deleteOne({ _id: new mongodb.ObjectId(id) });
+        res.json({ state: "success" });
     });
 
     app.get("/author", (req, res) => {
@@ -55,5 +64,3 @@ module.exports = (db) => {
 
     return app;
 };
-
-// // Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
