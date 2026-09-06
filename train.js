@@ -80,16 +80,30 @@
 
 // ================================ B-Task ================================================
 
-function countDig (smth) {
-    let count = 0;
-    for (let x of smth) {
-        if (x >= "0" && x <= "9") {
-            count++;
-        } else
-            continue
+// function countDig (smth) {
+//     let count = 0;
+//     for (let x of smth) {
+//         if (x >= "0" && x <= "9") {
+//             count++;
+//         } else
+//             continue
+//     }
+//     return count;
+// }
+
+// const z = countDig("dfs422sdf453dfs435dfssd543sad5hfg54");
+// console.log(z)
+
+// =============================== C-Task ================================================
+function checkContent(string1, string2) {
+    for (const x of string1) {
+        if (string2.includes(x)) {
+            continue;
+        } else {
+            return false;
+        }
     }
-    return count;
+    return true;
 }
 
-const z = countDig("dfs422sdf453dfs435dfssd543sad5hfg54");
-console.log(z)
+console.log(checkContent("olma va bexi", "bexi olma"));

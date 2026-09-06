@@ -30,11 +30,10 @@ module.exports = (db) => {
     app.post("/create-item", async (req, res) => {
         try {
             console.log(req.body);
-            const new_reja = req.body.reja;
-            // await db.collection("plans").insertOne({ reja: new_reja });
-            // res.end("successfully added");
-            const result = await db.collection("plans").insertOne({ reja: new_reja });
-            res.json({ _id: result.insertedId, reja: new_reja });
+            const new_reja = req.body.plan;
+            console.log("Yangi reja:", new_reja);
+            const result = await db.collection("plans").insertOne({ plan: new_reja });
+            res.json({ _id: result.insertedId, plan: new_reja });
         } catch (err) {
             console.log(err);
             res.end("Something went wrong");

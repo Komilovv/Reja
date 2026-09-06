@@ -6,7 +6,7 @@ function itemTemplate(item) {
     return `<li
                     class="list-group-item list-group-item-info d-flex align-items-center justify-content-between"
                 >
-                    <span class="item-text">${item.reja}</span>
+                    <span class="item-text">${item.plan}</span>
                     <div>
                         <button
                             data-id="${item._id}"
@@ -21,10 +21,12 @@ function itemTemplate(item) {
 
 document.getElementById("create-form").addEventListener("submit", function (e) {
     e.preventDefault();
+    console.log("E ning qiymati:", e);
     axios.post("/create-item", {
-        reja: createField.value
+        plan: createField.value
     })
     .then(function (response) {
+        console.log("Serverdan kelgan response:", response);
         document.getElementById("item-list").insertAdjacentHTML("beforeend", itemTemplate(response.data));
         createField.value = "";
         createField.focus();
