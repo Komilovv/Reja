@@ -49,5 +49,27 @@ document.addEventListener("click", function (e) {
                 });
         }
     }
+
+    if (e.target.classList.contains("edit-me")) {
+        let userInput = prompt("O'zgartirish kiriting", e.target.parentElement.parentElement.querySelector(".item-text").innerHTML);
+        if (userInput) {
+            axios.post("/edite-item", {id: e.target.getAttribute("data-id"), new_input: userInput,})
+            .then( async (response) => {
+                console.log("it s working")
+                e.target.parentElement.parentElement.querySelector(".item-text").innerHTML = userInput;
+            })
+            .catch((err) => {
+                console.log("Try again!")
+            })
+        }
+    }
 });
                       
+document.getElementById("clean-all").addEventListener("click", () => {
+    axios.post("/delete-all", {deleteAll: true})
+    .then((response) => {
+        alert(response.data.state);
+        document.location.reload();
+    })
+    .catch()
+})

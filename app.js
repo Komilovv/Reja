@@ -40,11 +40,29 @@ module.exports = (db) => {
         }
     });
 
-    app.post("/delete-item", async (req, res) => {
-        const id = req.body.id;
-        await db.collection("plans").deleteOne({ _id: new mongodb.ObjectId(id) });
-        res.json({ state: "success" });
+    app.post("/delete-item", async function(req, res) {
+        const id_fromFrontend = req.body.id;
+        console.log(id_fromFrontend);
+        await db.collection("plans").deleteOne({_id: new mongodb.ObjectId(id_fromFrontend)}
+        );
+        res.json({state: "success"})
+    })
+
+    app.post("/edite-item", async (req, res) => {
+        const data = req.body;
+        await db.collection("plans").findOneAndUpdate({_id: new mongodb.ObjectId(data.id)}, {$set: {plan: data.new_input}}
+        );
+        res.json({state: "success"});
     });
+    
+app.post("/delete-all", async (req, res) => {
+    console.log("working")
+    if (req.body.deleteAll) { 
+        await db.collection("plans").deleteMany({});
+    }
+    res.json({state: "all have been deleted"});
+    
+})
 
     app.get("/author", (req, res) => {
         res.render("author", { user: user });

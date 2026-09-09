@@ -95,15 +95,51 @@
 // console.log(z)
 
 // =============================== C-Task ================================================
-function checkContent(string1, string2) {
-    for (const x of string1) {
-        if (string2.includes(x)) {
-            continue;
-        } else {
-            return false;
-        }
+// function checkContent(string1, string2) {
+//     for (const x of string1) {
+//         if (string2.includes(x)) {
+//             continue;
+//         } else {
+//             return false;
+//         }
+//     }
+//     return true;
+// }
+
+// console.log(checkContent("olma va bexi", "bexi olma"));
+
+// ============================= D-Task =================================
+
+class Shop {
+    // non = 0;
+    // lagmon = 0;
+    // cola = 0;
+    constructor (non, lagmon, cola) {
+        this.non = non;
+        this.lagmon = lagmon;
+        this.cola = cola;
+        this.current_time = new Date().toLocaleTimeString();
     }
-    return true;
+    available () {
+        
+        console.log(`Hozi ${this.current_time} da ${this.non} ta non, ${this.lagmon} ta lagmon, va ${this.cola} ta cola mavjud.`);
+    }
+
+    sell (non, lagmon, cola) {
+        this.non -= non;
+        this.lagmon -= lagmon;
+        this.cola -= cola;
+    }
+
+    buy (non, lagmon, cola) {
+        this.non += non;
+        this.lagmon += lagmon;
+        this.cola += cola;
+    }
 }
 
-console.log(checkContent("olma va bexi", "bexi olma"));
+const shop = new Shop (7, 15, 9);
+
+shop.sell(0, 2, 7);
+shop.buy(4, 0, 3);
+shop.available();
