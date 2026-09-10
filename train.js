@@ -110,36 +110,54 @@
 
 // ============================= D-Task =================================
 
-class Shop {
-    // non = 0;
-    // lagmon = 0;
-    // cola = 0;
-    constructor (non, lagmon, cola) {
-        this.non = non;
-        this.lagmon = lagmon;
-        this.cola = cola;
-        this.current_time = new Date().toLocaleTimeString();
-    }
-    available () {
+// class Shop {
+//     // non = 0;
+//     // lagmon = 0;
+//     // cola = 0;
+//     constructor (non, lagmon, cola) {
+//         this.non = non;
+//         this.lagmon = lagmon;
+//         this.cola = cola;
+//         this.current_time = new Date().toLocaleTimeString();
+//     }
+//     available () {
         
-        console.log(`Hozi ${this.current_time} da ${this.non} ta non, ${this.lagmon} ta lagmon, va ${this.cola} ta cola mavjud.`);
-    }
+//         console.log(`Hozi ${this.current_time} da ${this.non} ta non, ${this.lagmon} ta lagmon, va ${this.cola} ta cola mavjud.`);
+//     }
 
-    sell (non, lagmon, cola) {
-        this.non -= non;
-        this.lagmon -= lagmon;
-        this.cola -= cola;
-    }
+//     sell (non, lagmon, cola) {
+//         this.non -= non;
+//         this.lagmon -= lagmon;
+//         this.cola -= cola;
+//     }
 
-    buy (non, lagmon, cola) {
-        this.non += non;
-        this.lagmon += lagmon;
-        this.cola += cola;
+//     buy (non, lagmon, cola) {
+//         this.non += non;
+//         this.lagmon += lagmon;
+//         this.cola += cola;
+//     }
+// }
+
+// const shop = new Shop (7, 15, 9);
+
+// shop.sell(0, 2, 7);
+// shop.buy(4, 0, 3);
+// shop.available();
+
+// =============================== FTask =================================
+function findDoubler(str) {
+    let strArr = str.split(''); 
+
+    for (let i = 0; i < strArr.length; i++) {
+        for (let j = i + 1; j < strArr.length; j++) {
+            if (strArr[i] === strArr[j]) {
+                return true;
+            }
+        }
     }
+    return false;
 }
 
-const shop = new Shop (7, 15, 9);
 
-shop.sell(0, 2, 7);
-shop.buy(4, 0, 3);
-shop.available();
+console.log(findDoubler("Code ishladimi?"))
+console.log(findDoubler("Code ishla"))
