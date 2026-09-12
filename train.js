@@ -145,19 +145,31 @@
 // shop.available();
 
 // =============================== FTask =================================
-function findDoubler(str) {
-    let strArr = str.split(''); 
+// function findDoubler(str) {
+//     let strArr = str.split(''); 
 
-    for (let i = 0; i < strArr.length; i++) {
-        for (let j = i + 1; j < strArr.length; j++) {
-            if (strArr[i] === strArr[j]) {
-                return true;
-            }
-        }
-    }
-    return false;
+//     for (let i = 0; i < strArr.length; i++) {
+//         for (let j = i + 1; j < strArr.length; j++) {
+//             if (strArr[i] === strArr[j]) {
+//                 return true;
+//             }
+//         }
+//     }
+//     return false;
+// }
+
+
+// console.log(findDoubler("Code ishladimi?"))
+// console.log(findDoubler("Code ishla"))
+
+// ============================== E-Task =================================
+function getReverse(str) {
+    x = str.split("").reverse().join('')
+    // x.reverse()
+    // x = "".join(x)
+    return x
 }
 
 
-console.log(findDoubler("Code ishladimi?"))
-console.log(findDoubler("Code ishla"))
+console.log(getReverse("Bulut"))
+
