@@ -163,13 +163,20 @@
 // console.log(findDoubler("Code ishla"))
 
 // ============================== E-Task =================================
-function getReverse(str) {
-    x = str.split("").reverse().join('')
-    // x.reverse()
-    // x = "".join(x)
-    return x
+// function getReverse(str) {
+//     x = str.split("").reverse().join('')
+
+//     return x
+// }
+
+
+// console.log(getReverse("Bulut"))
+
+// ================================= G-Task =================================
+function getHightestIndex(arr) {
+    const arr_max = Math.max(...arr);
+    const index_max = arr.indexOf(arr_max)
+    return index_max
 }
 
-
-console.log(getReverse("Bulut"))
-
+console.log(getHightestIndex([43,6,97,12,66,97]))
