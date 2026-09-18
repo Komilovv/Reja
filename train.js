@@ -173,10 +173,20 @@
 // console.log(getReverse("Bulut"))
 
 // ================================= G-Task =================================
-function getHightestIndex(arr) {
-    const arr_max = Math.max(...arr);
-    const index_max = arr.indexOf(arr_max)
-    return index_max
+// function getHightestIndex(arr) {
+//     const arr_max = Math.max(...arr);
+//     const index_max = arr.indexOf(arr_max)
+//     return index_max
+// }
+
+// console.log(getHightestIndex([43,6,97,12,66,97]))
+
+// ================================= H-Task ==================================
+function getPositive(arr) {
+    a_positive = arr.filter((x) => x>0);
+    return a_positive.join("")
 }
 
-console.log(getHightestIndex([43,6,97,12,66,97]))
+const str = getPositive([3,7,-9,5,12,-54])
+console.log(str)
+console.log(typeof(str))
