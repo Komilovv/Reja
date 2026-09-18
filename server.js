@@ -12,7 +12,7 @@ client.connect()
         const app = require("./app")(db);
         const server = http.createServer(app);
 
-        const PORT = 3000;
+        const PORT = 6013;
         server.listen(PORT, () => {
             console.log(`Server ${PORT} portda ishga tushdi, http://localhost:${PORT}`);
         });
